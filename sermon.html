@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sermon</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header{
+            background-color: #026bd5;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        nav{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0;
+        }
+        nav ul{
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: space-between;
+        }
+        nav li{
+            margin-right: 20px ;
+        }
+        nav a{
+            color: white;
+            text-decoration: none;
+        }
+        .logo{
+            height: 70px;
+            padding: 0;
+        }
+        .logo img{
+            height: 100%;
+        }
+
+        .menu-toggle{
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            z-index: 1000;
+        }
+
+        .bar{
+            height: 3px;
+            width: 25px;
+            background-color: white;
+            margin: 4px 0;
+            transition: 0.3s;
+        }
+        .menu-toggle.active .bar:nth-child(1) {
+            transform: rotate(-45deg) translate(-5px, 6px);
+        }
+
+        .menu-toggle.active .bar:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-toggle.active .bar:nth-child(3) {
+            transform: rotate(45deg) translate(-5px, -6px);
+        }
+
+        @media (max-width: 768px){
+            nav ul{
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                text-align: center;
+                background-color: #026bd5;
+            }
+            nav ul.nav-active{
+                display: flex;
+            }
+            .menu-toggle{
+                display: flex;
+            }
+        }
+
+
+
+
+
+
+        section{
+            background-color: #f7f7f7;
+            padding: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5) ;
+        }
+        #home h1, #home p{
+            text-align: center;
+        }
+        
+        h2{
+            text-align: center;
+        }
+        .search-bar{
+            display: block;
+            text-align: center;
+        }
+        #searchInput{
+            border-radius: 10px;
+            height: 20px;
+            border-width: 1px;
+        }
+        .sunday{
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 10px;
+        }
+        .Ssermon{
+            background-color: #c4c4c4 ;
+            padding: 10px;
+            border-radius: 10px;
+        }
+        .Ssermon img{
+            height: auto;
+            width: 45%;
+            margin: auto;
+            display: block;
+        }
+        button{
+            color: white;
+            background-color: #026bd5;
+            cursor: pointer;
+            border: none;
+            padding: 5px; 
+            border-radius: 5px;  
+        }
+
+        @media (max-width: 768px){
+            .sunday{
+                display: flex;
+                flex-direction: column;
+            }
+            .audio{
+                width: 100%;
+                height: 30px;
+            }
+            nav{
+                display: flex;
+                justify-content: center;
+                align-items:normal;
+            }
+            .logo img{
+                margin-right: 20px;
+            }
+        }
+
+        .bibledrill{
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            gap: 10px;
+        }
+        @media (max-width: 768px){
+            .bibledrill{
+                display: grid;
+                grid-template-columns: repeat(2,1fr);
+            }
+        }
+        
+
+        footer {
+            background-color: #026bd5;
+            color: white;
+            text-align: center;
+            padding: 20px 10px;
+            position: relative;
+        }
+        
+        footer p {
+            margin: 0;
+            font-size: 1rem;
+        }
+        #socials a i{
+            margin: 10px;
+            color: white
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="logo.png" alt="">
+            </div>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#sermon">Sermons</a></li>
+            <li><a href="#bibledrill">Bible Study Manuals</a></li>
+          </ul>
+
+          <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </div>
+        </nav>
+      </header>
+    
+    <main>
+        <section id="home">
+                <h1>Welcome to a platform where you can download sermons with undiluted word.</h1>
+                <p>Download and deepen your faith with our library of sermons, Bible study manuals, and spiritual resources</p>
+                <div class="search-bar">
+                    <input type="text" id="searchInput" placeholder=" Search sermon title ">
+                </div>
+        </section>
+
+        <section id="sermon">
+            <h2>Sunday sermon </h2>
+            <div class="sunday">
+
+                <div class="Ssermon">
+                    <img src="logo.png" alt="">
+                    <h3 class="topic-title">Ministering to the Lord </h3>
+                    <p>By Reverend Kayode Abraham</p>
+                    <p>2nd September, 2024</p>
+                    <audio class="audio" controls src="Sermons/Ministering to the Lord.MP3"></audio>
+                    <a download href="Sermons/Ministering to the Lord.MP3"><button>Download</button></a>
+                </div>
+
+                
+
+                
+
+            </div>
+        </section>
+
+
+        <h1>RECOMMENDED SPIRITUAL BOOKS </h1>
+
+        <section id="bibledrill">
+            <h2>Sunday School manual</h2>
+            <div class="bibledrill" >
+                <div class="Ssermon">
+                    <img src="logo.png" alt="">
+                    <h3 class="topic-title">Volume 17</h3>
+                    <p>By Reverend Kayode Abraham</p>
+                    <a download href="#"><button>Download</button></a>
+                </div>
+
+                
+
+                
+            </div>
+        </section>
+
+
+
+
+    </main>
+
+
+
+    <footer>
+        <p>&copy; 2024 New Glory Ministry. All Rights Reserved.</p>
+        <div id="socials" class="footer-social">
+            
+            <a id="facebook" target="_blank" href="#"><i class="fab fa-facebook"></i></a>
+            <a id="youtube" target="_blank" href="#"><i class="fab fa-youtube"></i></a>
+            <a id="instagram" target="_blank" href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+    </footer>
+
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('nav ul');
+
+        menuToggle.addEventListener('click', function(){
+            navLinks.classList.toggle('nav-active');
+        });
+
+        navLinks.addEventListener('click', function(event){
+            if (event.target.tagName === 'A'){
+                navLinks.classList.remove('nav-active');
+            }
+        });
+        
+
+
+
+
+
+        const searchInput = document.getElementById('searchInput');
+        const content = document.getElementsByClassName('Ssermon');
+
+        document.querySelectorAll('.Ssermon').forEach(function(post){
+            const titleHead = post.querySelector('.topic-title');
+            const titleText = titleHead.textContent.trim();
+            post.setAttribute('data-title', titleText); 
+        });
+
+        searchInput.addEventListener('keyup', function(){
+            const filter = searchInput.value.toLowerCase();
+            Array.from(content).forEach(function(post){
+              const title = post.getAttribute('data-title').toLowerCase();
+              if (title.includes(filter)){
+                post.style.display = '';
+              }
+              else{
+                post.style.display = 'none';
+              }
+            });
+        });
+
+    </script>
+</body>
+</html>
